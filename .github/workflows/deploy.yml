@@ -1,0 +1,85 @@
+name: Ai Agent Portfolio
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - "feature/**"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run full CI checks (lint, typecheck, data validation, build)
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+        run: npm run ci
+
+  smoke-test:
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build app
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+        run: npm run build
+
+      - name: Start app and run route smoke checks
+        shell: bash
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3000 > /tmp/next-start.log 2>&1 &
+          APP_PID=$!
+          trap 'kill "$APP_PID"' EXIT
+
+          for i in {1..45}; do
+            if curl -fsS http://127.0.0.1:3000 > /dev/null; then
+              break
+            fi
+            sleep 1
+          done
+
+          curl -fsS http://127.0.0.1:3000 > /dev/null
+          curl -fsS http://127.0.0.1:3000/voice-agent > /dev/null
+          curl -fsS -X POST http://127.0.0.1:3000/api/assistant \
+            -H 'content-type: application/json' \
+            -d '{"prompt":"health check"}' > /dev/null
+          curl -fsS -X POST http://127.0.0.1:3000/api/ai \
+            -H 'content-type: application/json' \
+            -d '{"message":"health check"}' > /dev/null

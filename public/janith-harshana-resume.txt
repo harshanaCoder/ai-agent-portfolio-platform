@@ -1,0 +1,20 @@
+Janith Harshana
+AI and Robotics Engineer
+
+Focus areas
+- AI systems and automation
+- Embedded systems and firmware
+- Drones and autonomous control
+- Robotics dashboards and telemetry
+- Computer vision and edge inference
+
+Selected capabilities
+- Next.js, TypeScript, TailwindCSS, Three.js, Framer Motion
+- Python, C++, JavaScript, ESP32, Arduino
+- Telemetry systems, diagnostics dashboards, control loops
+- Computer vision, SLAM, perception pipelines, edge AI
+
+Contact
+- Email: janith@example.com
+- GitHub: https://github.com/janithharshana
+- LinkedIn: https://www.linkedin.com/in/janith-harshana
