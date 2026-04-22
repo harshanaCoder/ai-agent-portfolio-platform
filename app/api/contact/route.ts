@@ -44,8 +44,6 @@ function isRateLimited(key: string) {
   return false;
 }
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   const contentType = request.headers.get("content-type") ?? "";
 
@@ -108,6 +106,16 @@ export async function POST(request: Request) {
       { status: 400 }
     );
   }
+
+  const resendApiKey = process.env.RESEND_API_KEY;
+  if (!resendApiKey) {
+    return Response.json(
+      { ok: false, message: "Email service is not configured. Please try again later." },
+      { status: 500 }
+    );
+  }
+
+  const resend = new Resend(resendApiKey);
 
   try {
     // Note: Resend requires a verified sending domain. If you haven't verified a domain on Resend,
