@@ -36,6 +36,7 @@ jobs:
       - name: Run full CI checks (lint, typecheck, data validation, build)
         env:
           NEXT_TELEMETRY_DISABLED: 1
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: npm run ci
 
   smoke-test:
@@ -59,6 +60,7 @@ jobs:
       - name: Build app
         env:
           NEXT_TELEMETRY_DISABLED: 1
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: npm run build
 
       - name: Start app and run route smoke checks
