@@ -39,9 +39,9 @@ export function HeroSection({ mode, onPrimaryAction, onSecondaryAction }: HeroSe
   const isVoiceMode = mode === "voice";
 
   return (
-    <div className="relative z-10 grid min-h-[clamp(34rem,78vh,46rem)] gap-9 px-5 py-12 sm:px-8 sm:py-14 lg:grid-cols-[1.16fr_0.84fr] lg:items-end lg:px-12 lg:py-16 xl:px-16">
+    <div className="relative z-10 grid min-h-[clamp(28rem,70vh,46rem)] gap-9 px-4 py-10 sm:px-8 sm:py-14 lg:grid-cols-[1.16fr_0.84fr] lg:items-end lg:px-12 lg:py-16 xl:px-16">
       <motion.div
-        className="max-w-3xl space-y-7"
+        className="w-full space-y-7 lg:max-w-3xl"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -56,14 +56,14 @@ export function HeroSection({ mode, onPrimaryAction, onSecondaryAction }: HeroSe
               Systems Developer
             </span>
           </h1>
-          <p className="max-w-[38ch] text-lg font-semibold text-[color:var(--text)] sm:text-xl lg:text-3xl">
+          <p className="text-lg font-semibold text-[color:var(--text)] sm:max-w-[38ch] sm:text-xl lg:text-3xl">
             Building AI-Driven Solutions for Real-World Systems
           </p>
         </motion.div>
 
         <motion.p
           variants={itemVariants}
-          className="max-w-[56ch] text-base leading-8 text-[color:var(--text-soft)] sm:text-lg lg:text-xl lg:leading-9"
+          className="text-base leading-8 text-[color:var(--text-soft)] sm:text-lg sm:max-w-[56ch] lg:text-xl lg:leading-9"
         >
           {isVoiceMode
             ? "You are now in voice agent mode. Ask the digital twin to guide you through my skills, projects, achievements, or the story behind specific engineering decisions."

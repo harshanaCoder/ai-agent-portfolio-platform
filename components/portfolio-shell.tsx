@@ -64,7 +64,7 @@ export function PortfolioShell({ navigationItems, projects }: PortfolioShellProp
   const selectedProjectSlug = projects[0]?.slug ?? "";
 
   return (
-    <div className="relative min-h-screen overflow-x-clip">
+    <div className="relative min-h-screen w-full overflow-x-hidden">
       <div className="pointer-events-none fixed inset-0 -z-20 opacity-75">
         <div className="absolute inset-0 subtle-grid [mask-image:radial-gradient(circle_at_center,black,transparent_82%)]" />
         <div className="absolute -top-28 left-[12%] h-[22rem] w-[22rem] rounded-full bg-teal-300/10 blur-3xl" />

@@ -46,7 +46,7 @@ export function ContactSection() {
                 href={link.href}
                 target={link.label !== "Email" ? "_blank" : undefined}
                 rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
-                className="group relative overflow-hidden rounded-xl border border-[color:var(--line)] bg-[rgba(15,23,31,0.6)] p-5 sm:p-6 transition-all duration-300 hover:border-[color:var(--line-strong)] hover:shadow-lg"
+                className="group relative overflow-hidden rounded-xl border border-[color:var(--line)] bg-[rgba(15,23,31,0.6)] p-4 transition-all duration-300 hover:border-[color:var(--line-strong)] hover:shadow-lg sm:p-6"
                 aria-label={`Contact via ${link.label}`}
                 whileHover={{ y: -4, scale: 1.01 }}
                 whileTap={{ y: -1, scale: 0.99 }}

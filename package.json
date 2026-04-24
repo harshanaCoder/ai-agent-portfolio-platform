@@ -9,6 +9,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "validate:content": "node scripts/validate-content.mjs",
+    "measure:response": "node scripts/measure-response-time.mjs",
     "ci": "npm run lint && npm run typecheck && npm run validate:content && npm run build"
   },
   "dependencies": {
