@@ -233,7 +233,7 @@ export function ProjectsSection({ projects, activeSlug }: ProjectsSectionProps) 
                       ))}
                     </div>
 
-                    <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                       {has3dExperience(project) ? (
                         <button
                           type="button"

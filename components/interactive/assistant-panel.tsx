@@ -445,19 +445,19 @@ export function AssistantPanel({ project, projects, onSelectProject }: Assistant
 
   return (
     <div className="glass-panel rounded-[1.75rem] p-5">
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-col gap-4">
         <div>
           <p className="text-xs uppercase tracking-[0.34em] text-cyan-200/80">Project AI Assistant</p>
-          <h3 className="mt-3 font-display text-2xl text-white">Ask the system</h3>
+          <h3 className="mt-3 font-display text-xl text-white sm:text-2xl">Ask the system</h3>
           <p className="mt-2 max-w-xl text-sm leading-7 text-slate-300">
             Voice-ready interface for architecture walkthroughs, debugging context, and engineering tradeoff explanations.
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={() => setHandsFreeVoice((current) => !current)}
-            className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition ${handsFreeVoice ? "border-cyan-300/30 bg-cyan-400/15 text-cyan-100" : "border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/20 hover:bg-cyan-400/10"}`}
+            className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition sm:px-4 sm:py-2 sm:text-sm ${handsFreeVoice ? "border-cyan-300/30 bg-cyan-400/15 text-cyan-100" : "border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/20 hover:bg-cyan-400/10"}`}
             aria-pressed={handsFreeVoice}
           >
             {handsFreeVoice ? "Hands-free on" : "Hands-free off"}
@@ -465,7 +465,7 @@ export function AssistantPanel({ project, projects, onSelectProject }: Assistant
           <button
             type="button"
             onClick={() => setContinuousVoice((current) => !current)}
-            className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition ${continuousVoice ? "border-cyan-300/30 bg-cyan-400/15 text-cyan-100" : "border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/20 hover:bg-cyan-400/10"}`}
+            className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition sm:px-4 sm:py-2 sm:text-sm ${continuousVoice ? "border-cyan-300/30 bg-cyan-400/15 text-cyan-100" : "border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/20 hover:bg-cyan-400/10"}`}
             aria-pressed={continuousVoice}
           >
             {continuousVoice ? "Continuous on" : "Continuous off"}
@@ -473,7 +473,7 @@ export function AssistantPanel({ project, projects, onSelectProject }: Assistant
           <button
             type="button"
             onClick={() => setAutoSpeak((current) => !current)}
-            className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition ${autoSpeak ? "border-cyan-300/30 bg-cyan-400/15 text-cyan-100" : "border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/20 hover:bg-cyan-400/10"}`}
+            className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition sm:px-4 sm:py-2 sm:text-sm ${autoSpeak ? "border-cyan-300/30 bg-cyan-400/15 text-cyan-100" : "border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/20 hover:bg-cyan-400/10"}`}
             aria-pressed={autoSpeak}
           >
             {autoSpeak ? "Auto speak on" : "Auto speak off"}
@@ -481,7 +481,7 @@ export function AssistantPanel({ project, projects, onSelectProject }: Assistant
           <button
             type="button"
             onClick={speakLatest}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition hover:border-cyan-300/20 hover:bg-cyan-400/10"
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-200 transition hover:border-cyan-300/20 hover:bg-cyan-400/10 sm:px-4 sm:py-2 sm:text-sm"
           >
             <Volume2 className="h-4 w-4" />
             Speak

@@ -64,13 +64,13 @@ export function SiteHeader({ navigationItems }: SiteHeaderProps) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 pt-3 sm:pt-4">
       <div className="container-shell relative">
-        <div className="flex h-[var(--header-height)] w-full items-center justify-between rounded-full border border-[color:var(--line)] bg-[rgba(11,17,23,0.84)] px-4 shadow-[var(--shadow-sm)] backdrop-blur-xl transition-colors duration-300 sm:px-5 lg:px-6">
+        <div className="flex h-[var(--header-height)] w-full items-center justify-between rounded-full border border-[color:var(--line)] bg-[rgba(11,17,23,0.84)] px-3 shadow-[var(--shadow-sm)] backdrop-blur-xl transition-colors duration-300 sm:px-5 lg:px-6">
           <a
             href="#home"
-            className="group flex items-center gap-3 transition-opacity hover:opacity-85"
+            className="group flex min-w-0 items-center gap-2 transition-opacity hover:opacity-85 sm:gap-3"
             aria-label="Home"
           >
-            <div className="icon-bob relative h-10 w-10 overflow-hidden rounded-full border border-teal-300/30 bg-teal-300/10 ring-1 ring-white/5">
+            <div className="icon-bob relative h-9 w-9 flex-shrink-0 overflow-hidden rounded-full border border-teal-300/30 bg-teal-300/10 ring-1 ring-white/5 sm:h-10 sm:w-10">
               <Image
                 src="/icon.svg"
                 alt="Janith Harshana logo"
@@ -80,9 +80,9 @@ export function SiteHeader({ navigationItems }: SiteHeaderProps) {
                 priority
               />
             </div>
-            <div>
-              <p className="font-display text-base font-semibold tracking-[0.04em] text-white lg:text-lg">JANITH HARSHANA</p>
-              <p className="text-sm text-[color:var(--text-soft)] lg:text-base">AI & Embedded Systems Builder</p>
+            <div className="min-w-0">
+              <p className="truncate font-display text-sm font-semibold tracking-[0.04em] text-white sm:text-base lg:text-lg">JANITH HARSHANA</p>
+              <p className="hidden text-sm text-[color:var(--text-soft)] sm:block lg:text-base">AI & Embedded Systems Builder</p>
             </div>
           </a>
 
@@ -121,7 +121,7 @@ export function SiteHeader({ navigationItems }: SiteHeaderProps) {
             type="button"
             aria-label="Toggle navigation menu"
             aria-expanded={open}
-            className="micro-press inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--line)] text-[color:var(--text)] lg:hidden"
+            className="micro-press inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-[color:var(--line)] text-[color:var(--text)] sm:h-11 sm:w-11 lg:hidden"
             onClick={() => setOpen((current) => !current)}
             whileTap={{ scale: 0.94 }}
           >
@@ -138,7 +138,7 @@ export function SiteHeader({ navigationItems }: SiteHeaderProps) {
           initial={false}
           animate={open ? { opacity: 1, y: 0, scale: 1, pointerEvents: "auto" } : { opacity: 0, y: -12, scale: 0.98, pointerEvents: "none" }}
           transition={{ type: "spring", stiffness: 420, damping: 34, mass: 0.8 }}
-          className="absolute inset-x-0 top-[calc(var(--header-height)+0.7rem)] rounded-2xl border border-[color:var(--line)] bg-[rgba(11,17,23,0.96)] p-4 shadow-[var(--shadow-md)] backdrop-blur-xl lg:hidden"
+          className="absolute inset-x-0 top-[calc(var(--header-height)+0.7rem)] mx-1 rounded-2xl border border-[color:var(--line)] bg-[rgba(11,17,23,0.96)] p-4 shadow-[var(--shadow-md)] backdrop-blur-xl lg:hidden"
         >
           <nav className="grid gap-2 border-b border-[color:var(--line)] pb-4">
             {navigationItems.map((item) => {

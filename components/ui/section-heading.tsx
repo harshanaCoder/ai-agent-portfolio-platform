@@ -22,7 +22,7 @@ export function SectionHeading({ eyebrow, title, description, action }: SectionH
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.48, delay: 0.04, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, amount: 0.3 }}
-        className="max-w-3xl space-y-3"
+        className="w-full space-y-3 lg:max-w-3xl"
       >
         <p className="eyebrow-label">
           {eyebrow}
@@ -30,7 +30,7 @@ export function SectionHeading({ eyebrow, title, description, action }: SectionH
         <h2 className="text-balance max-w-[18ch] text-[clamp(2rem,5.4vw,4.2rem)] font-bold leading-[1.04] text-white">
           {title}
         </h2>
-        <p className="max-w-[60ch] text-base leading-7 text-[color:var(--text-soft)] lg:text-xl lg:leading-9">
+        <p className="text-base leading-7 text-[color:var(--text-soft)] sm:max-w-[60ch] lg:text-xl lg:leading-9">
           {description}
         </p>
       </motion.div>

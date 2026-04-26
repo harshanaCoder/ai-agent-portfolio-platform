@@ -64,7 +64,7 @@ export function PortfolioShell({ navigationItems, projects }: PortfolioShellProp
   const selectedProjectSlug = projects[0]?.slug ?? "";
 
   return (
-    <div className="relative min-h-screen overflow-x-clip">
+    <div className="relative min-h-screen w-full overflow-x-hidden">
       <div className="pointer-events-none fixed inset-0 -z-20 opacity-75">
         <div className="absolute inset-0 subtle-grid [mask-image:radial-gradient(circle_at_center,black,transparent_82%)]" />
         <div className="absolute -top-28 left-[12%] h-[22rem] w-[22rem] rounded-full bg-teal-300/10 blur-3xl" />
@@ -95,11 +95,11 @@ export function PortfolioShell({ navigationItems, projects }: PortfolioShellProp
           className="section-stack"
         >
           <div className="container-shell section-stack">
-            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
+            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
               <AboutSection />
             </motion.div>
 
-            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
+            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
               <SkillsSection />
             </motion.div>
 
@@ -110,7 +110,7 @@ export function PortfolioShell({ navigationItems, projects }: PortfolioShellProp
               />
             </div>
 
-            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
+            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.05 }}>
               <CredentialsSection />
             </motion.div>
           </div>
@@ -119,7 +119,7 @@ export function PortfolioShell({ navigationItems, projects }: PortfolioShellProp
             variants={sectionMotion}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="container-shell"
           >
             <ContactSection />
