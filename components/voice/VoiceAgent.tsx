@@ -343,7 +343,7 @@ export function VoiceAgent() {
       {/* Avatar Container — scales down and reduces height instead of absolute positioning */}
       <div 
         className={`relative flex justify-center shrink-0 transition-all duration-1000 ease-in-out origin-top ${
-          messages.length > 2 ? 'h-[110px] scale-[0.35]' : 'h-[320px] scale-100'
+          messages.length > 2 ? 'h-[80px] scale-[0.35]' : 'h-[220px] sm:h-[280px] lg:h-[320px] scale-100'
         }`}
       >
         <div className="pointer-events-none">
@@ -367,13 +367,13 @@ export function VoiceAgent() {
       <div className="shrink-0 border-t border-white/5 bg-black/20 px-4 pb-4 pt-3 backdrop-blur-sm">
         {/* Quick Actions */}
         {!isListening && messages.length <= 3 && (
-          <div className="mb-6 flex flex-wrap justify-center gap-3 px-2">
+          <div className="mb-4 flex flex-wrap justify-center gap-2 px-1 sm:mb-6 sm:gap-3 sm:px-2">
             {QUICK_ACTIONS.map((action, i) => (
               <button
                 key={i}
                 type="button"
                 onClick={() => void sendMessage(action.label)}
-                className="inline-flex items-center gap-2 rounded-full border border-cyan-500/50 bg-black/40 px-5 py-2.5 text-sm font-medium tracking-wide text-cyan-50 backdrop-blur-md transition-all hover:scale-105 hover:bg-cyan-950/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] shadow-[0_0_15px_rgba(6,182,212,0.2)]"
+                className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/50 bg-black/40 px-3 py-2 text-xs font-medium tracking-wide text-cyan-50 backdrop-blur-md transition-all hover:scale-105 hover:bg-cyan-950/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] shadow-[0_0_15px_rgba(6,182,212,0.2)] sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm"
               >
                 <span className="text-cyan-400">{action.icon}</span>
                 {action.label}
@@ -421,7 +421,7 @@ export function VoiceAgent() {
             <div className="flex w-full items-center gap-3 rounded-full border border-cyan-500/50 bg-black/50 p-2 pl-2 shadow-[0_0_20px_rgba(6,182,212,0.3)] backdrop-blur-xl transition-all hover:bg-black/60 focus-within:border-cyan-400 focus-within:shadow-[0_0_30px_rgba(6,182,212,0.6)] focus-within:bg-black/70">
               
               {/* Reference interface specific purely aesthetic N avatar inside input */}
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-cyan-400/50 bg-cyan-950/40 text-lg font-bold text-cyan-100 shadow-[0_0_15px_rgba(6,182,212,0.5)]">
+              <div className="hidden h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan-400/50 bg-cyan-950/40 text-base font-bold text-cyan-100 shadow-[0_0_15px_rgba(6,182,212,0.5)] xs:flex sm:flex sm:h-11 sm:w-11 sm:text-lg">
                 N
               </div>
 

@@ -57,7 +57,7 @@ export function VoiceAvatar({ isListening, isSpeaking }: VoiceAvatarProps) {
       : "border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.2)]";
 
   return (
-    <div className="relative flex w-full items-center justify-center py-10">
+    <div className="relative flex w-full items-center justify-center py-4 sm:py-6">
       {/* Deep HUD Ambient background blur */}
       <div
         className="absolute rounded-full blur-[100px] transition-all duration-1000"

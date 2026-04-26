@@ -126,32 +126,40 @@
 
 @layer components {
   .container-shell {
-    width: calc(100% - 1rem);
+    width: calc(100% - 2rem);
     max-width: 100%;
+    min-width: 0;
     margin-inline: auto;
     box-sizing: border-box;
   }
 
-  @media (min-width: 640px) {
-    .container-shell {
-      width: calc(100% - 1.5rem);
-    }
-  }
-
-  @media (min-width: 1024px) {
+  @media (min-width: 480px) {
     .container-shell {
       width: calc(100% - 2.5rem);
     }
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 640px) {
+    .container-shell {
+      width: calc(100% - 3rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
     .container-shell {
       width: calc(100% - 3.5rem);
     }
   }
 
+  @media (min-width: 1440px) {
+    .container-shell {
+      width: calc(100% - 4rem);
+    }
+  }
+
   .section-stack {
     @apply grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: clamp(2.6rem, 6vw, 4.8rem);
   }
 
@@ -296,5 +304,10 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .overflow-wrap-anywhere {
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 }
