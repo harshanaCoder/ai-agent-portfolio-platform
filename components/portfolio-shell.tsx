@@ -95,11 +95,11 @@ export function PortfolioShell({ navigationItems, projects }: PortfolioShellProp
           className="section-stack"
         >
           <div className="container-shell section-stack">
-            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
+            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
               <AboutSection />
             </motion.div>
 
-            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
+            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
               <SkillsSection />
             </motion.div>
 
@@ -110,7 +110,7 @@ export function PortfolioShell({ navigationItems, projects }: PortfolioShellProp
               />
             </div>
 
-            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
+            <motion.div variants={sectionMotion} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.05 }}>
               <CredentialsSection />
             </motion.div>
           </div>
@@ -119,7 +119,7 @@ export function PortfolioShell({ navigationItems, projects }: PortfolioShellProp
             variants={sectionMotion}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="container-shell"
           >
             <ContactSection />
